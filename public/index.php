@@ -368,7 +368,19 @@ switch ($action) {
         $lichsu = $dh->layDonHangTheoMaKH($_SESSION['user']['MaKhachHang']);
         include("profile.php");
         break;
-
+    case "chitietdonhang":
+        // Kiểm tra đăng nhập
+        if (!isset($_SESSION['user'])) {
+            echo '<script>alert("Vui lòng đăng nhập!"); window.location="index.php?action=dangnhap";</script>';
+            exit();
+        }
+        if (isset($_GET['id'])) {
+            $ttKhachHang = $kh->layKhachHangTheoId($_SESSION['user']['MaKhachHang']);
+            $maDonHang = $_GET['id'];
+            $chiTietDonHang = $ctdonhang->laychitiettheodonhang($maDonHang);
+            include("order_details.php");
+        }
+        break;
     case "capnhatthongtin":
         // Kiểm tra đăng nhập
         if (!isset($_SESSION['user'])) {

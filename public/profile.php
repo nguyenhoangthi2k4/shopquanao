@@ -191,7 +191,8 @@
                                                                 }
                                                             ?>
                                                             </td>
-                                                            <td class="px-6 py-4 whitespace-nowrap text-sm text-text-secondary dark:text-gray-300"><a href="order_details.php?order_id=<?= $donhang['MaDonHang'] ?>">Xem chi tiết</a></td>
+                                                            <!-- <td class="px-6 py-4 whitespace-nowrap text-sm text-text-secondary dark:text-gray-300 btn"><a href="order_details.php?order_id=<?= $donhang['MaDonHang'] ?>">Xem chi tiết</a></td> -->
+                                                            <td class="px-6 py-4 whitespace-nowrap text-sm text-text-secondary dark:text-gray-300 btn"><a href="index.php?action=chitietdonhang&id=<?= $donhang['MaDonHang'] ?>" class="text-primary hover:underline">Xem chi tiết</a></td>
                                                         </tr>
                                                     <?php endforeach; ?>
                                                 </tbody>
